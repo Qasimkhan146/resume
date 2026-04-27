@@ -1,0 +1,10 @@
+export { AboutPreviewSection } from "./about-preview-section";
+export { ContactCtaSection } from "./contact-cta-section";
+export { FeaturedProjectsSection } from "./featured-projects-section";
+export { Footer } from "./footer";
+export { HeroSection } from "./hero-section";
+export { Navbar } from "./navbar";
+export { ProcessSection } from "./process-section";
+export { ServicesSection } from "./services-section";
+export { TechStackSection } from "./tech-stack-section";
+export { TrustStripSection } from "./trust-strip-section";
