@@ -1,5 +1,10 @@
-export { ButtonLink } from "./button-link";
+﻿export { ButtonLink } from "./button-link";
+export { ContactForm } from "./contact-form";
 export { Container } from "./container";
 export { ProjectCard } from "./project-card";
+export { Reveal } from "./reveal";
 export { SectionHeading } from "./section-heading";
+export { ServiceCard } from "./service-card";
+export { SkillGroupCard } from "./skill-group-card";
 export { Tag } from "./tag";
+export { ThemeToggle } from "./theme-toggle";

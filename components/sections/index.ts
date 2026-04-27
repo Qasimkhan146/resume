@@ -1,5 +1,6 @@
 export { AboutPreviewSection } from "./about-preview-section";
 export { ContactCtaSection } from "./contact-cta-section";
+export { DeploymentDevOpsSection } from "./deployment-devops-section";
 export { FeaturedProjectsSection } from "./featured-projects-section";
 export { Footer } from "./footer";
 export { HeroSection } from "./hero-section";
@@ -8,3 +9,4 @@ export { ProcessSection } from "./process-section";
 export { ServicesSection } from "./services-section";
 export { TechStackSection } from "./tech-stack-section";
 export { TrustStripSection } from "./trust-strip-section";
+export { WhyChooseMeSection } from "./why-choose-me-section";

@@ -1,0 +1,18 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Qasim Sharif full-stack developer portfolio</title>
+  <desc id="desc">Open Graph image for portfolio sharing previews.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="45%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g fill="#f8fafc" font-family="Inter, Arial, sans-serif">
+    <text x="80" y="220" font-size="34" font-weight="600" opacity="0.9">Qasim Sharif</text>
+    <text x="80" y="300" font-size="62" font-weight="700">Full-Stack Developer</text>
+    <text x="80" y="360" font-size="28" opacity="0.95">Next.js | Node.js | MERN | PERN</text>
+    <text x="80" y="438" font-size="24" opacity="0.88">Marketplaces, SaaS platforms, dashboards, and production-ready web apps</text>
+  </g>
+</svg>

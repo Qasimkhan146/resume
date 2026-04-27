@@ -1,10 +1,22 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Container, SectionHeading, Tag } from "@/components/ui";
 import { siteMeta, techGroups } from "@/lib/site-data";
 
+const aboutDescription =
+  "About Qasim Sharif, a full-stack developer focused on building scalable, production-ready web applications for product teams and clients.";
+
 export const metadata: Metadata = {
   title: "About",
-  description: "About Muhammad Qasim, full-stack developer focused on scalable web products.",
+  description: aboutDescription,
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About | Qasim Sharif",
+    description: aboutDescription,
+    url: "/about",
+    type: "profile",
+  },
 };
 
 export default function AboutPage() {
@@ -12,6 +24,7 @@ export default function AboutPage() {
     <section className="py-14 sm:py-16">
       <Container className="space-y-8">
         <SectionHeading
+          level="h1"
           eyebrow="About Me"
           title="Full-Stack Developer for Product Teams and Freelance Clients"
           description="I build dependable, modern web applications with strong attention to architecture, user experience, and delivery quality."
@@ -31,7 +44,7 @@ export default function AboutPage() {
         <div className="grid gap-4 md:grid-cols-2">
           {techGroups.map((group) => (
             <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-slate-900">{group.title}</h3>
+              <h2 className="text-base font-semibold text-slate-900">{group.title}</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <Tag key={item}>{item}</Tag>

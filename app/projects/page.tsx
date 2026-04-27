@@ -1,10 +1,22 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Container, ProjectCard, SectionHeading } from "@/components/ui";
-import { projects } from "@/lib/site-data";
+import { projectsData } from "@/lib/projects-data";
+
+const projectsDescription =
+  "Selected full-stack projects across marketplaces, SaaS platforms, admin dashboards, and production-ready web applications.";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected full-stack projects across marketplace, SaaS, and admin systems.",
+  description: projectsDescription,
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects | Qasim Sharif",
+    description: projectsDescription,
+    url: "/projects",
+    type: "website",
+  },
 };
 
 export default function ProjectsPage() {
@@ -12,13 +24,14 @@ export default function ProjectsPage() {
     <section className="py-14 sm:py-16">
       <Container className="space-y-8">
         <SectionHeading
+          level="h1"
           eyebrow="Projects"
           title="All Projects"
-          description="A complete view of the products I have built using Next.js, MERN, and PERN stacks."
+          description="A complete view of projects focused on marketplaces, internal systems, and production-ready web applications."
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
+          {projectsData.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
@@ -26,3 +39,4 @@ export default function ProjectsPage() {
     </section>
   );
 }
+

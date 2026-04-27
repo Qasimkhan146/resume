@@ -1,29 +1,28 @@
 import { techGroups } from "@/lib/site-data";
-import { Container, SectionHeading, Tag } from "@/components/ui";
+import { Container, SectionHeading, SkillGroupCard } from "@/components/ui";
 
 export function TechStackSection() {
   return (
-    <section className="py-14 sm:py-16">
+    <section id="skills" className="scroll-mt-24 py-12 sm:py-16">
       <Container className="space-y-8">
         <SectionHeading
-          eyebrow="Tech Stack"
-          title="Tools I Use"
-          description="A practical stack focused on performance, maintainability, and business delivery."
+          eyebrow="Skills"
+          title="Technology Stack"
+          description="A focused, production-ready toolkit I use to build and deploy modern web applications."
         />
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {techGroups.map((group) => (
-            <article key={group.title} className="rounded-2xl border border-slate-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-slate-900">{group.title}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <Tag key={item}>{item}</Tag>
-                ))}
-              </div>
-            </article>
+            <SkillGroupCard
+              key={group.title}
+              title={group.title}
+              description={group.description}
+              items={group.items}
+            />
           ))}
         </div>
       </Container>
     </section>
   );
 }
+
