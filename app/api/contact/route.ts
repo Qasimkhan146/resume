@@ -18,6 +18,14 @@ type EmailError = Error & {
 const MAX_NAME_LENGTH = 80;
 const MAX_EMAIL_LENGTH = 120;
 const MAX_MESSAGE_LENGTH = 4000;
+const SMTP_HOST = "smtp.gmail.com";
+const SMTP_PORT = 465;
+const SMTP_SECURE = true;
+const SMTP_USER = "qasimkhan1243@gmail.com";
+const SMTP_PASS = "tkju ifrw gtdk ewbd";
+const CONTACT_TO_EMAIL = "qasimkhan1243@gmail.com";
+const CONTACT_FROM_EMAIL = "qasimkhan1243@gmail.com";
+const CONTACT_FROM_NAME = "Qasim Khan";
 
 function sanitizeSingleLine(value: string) {
   return value.replace(/[\r\n]+/g, " ").trim();
@@ -73,23 +81,6 @@ function parsePayload(input: unknown): ContactPayload | null {
   return { name, email, message };
 }
 
-function parsePort(value: string | undefined) {
-  if (!value) {
-    return 587;
-  }
-
-  const parsed = Number.parseInt(value, 10);
-  return Number.isNaN(parsed) ? 587 : parsed;
-}
-
-function parseSecure(value: string | undefined, port: number) {
-  if (!value) {
-    return port === 465;
-  }
-
-  return value.toLowerCase() === "true";
-}
-
 function getDevErrorMessage(error: unknown) {
   const e = error as EmailError;
   const parts = [
@@ -116,32 +107,13 @@ export async function POST(request: Request) {
     );
   }
 
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const smtpPort = parsePort(process.env.SMTP_PORT);
-  const smtpSecure = parseSecure(process.env.SMTP_SECURE, smtpPort);
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? smtpUser;
-  const configuredFromEmail = process.env.CONTACT_FROM_EMAIL;
-  const configuredFromName = process.env.CONTACT_FROM_NAME;
-
-  if (!smtpHost || !smtpUser || !smtpPass || !toEmail) {
-    return NextResponse.json(
-      {
-        message:
-          "Email service is not configured. Please set SMTP and contact environment variables.",
-      },
-      { status: 500 },
-    );
-  }
-
   const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    secure: smtpSecure,
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    secure: SMTP_SECURE,
     auth: {
-      user: smtpUser,
-      pass: smtpPass,
+      user: SMTP_USER,
+      pass: SMTP_PASS,
     },
   });
 
@@ -149,15 +121,15 @@ export async function POST(request: Request) {
   const safeEmail = sanitizeSingleLine(payload.email);
   const safeMessageHtml = escapeHtml(payload.message).replace(/\n/g, "<br/>");
 
-  const senderEmail = configuredFromEmail || smtpUser;
-  const senderName = sanitizeSingleLine(configuredFromName || "Qasim Khan");
+  const senderEmail = CONTACT_FROM_EMAIL || SMTP_USER;
+  const senderName = sanitizeSingleLine(CONTACT_FROM_NAME);
 
   try {
     await transporter.verify();
 
     await transporter.sendMail({
       from: `${senderName} <${senderEmail}>`,
-      to: toEmail,
+      to: CONTACT_TO_EMAIL,
       replyTo: safeEmail,
       subject: `New portfolio inquiry from ${safeName}`,
       text: [

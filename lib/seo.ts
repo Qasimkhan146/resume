@@ -1,4 +1,4 @@
-﻿export const DEFAULT_SITE_URL = "https://example.com";
+export const DEFAULT_SITE_URL = "http://localhost:3000";
 
 function normalizeSiteUrl(value?: string) {
   if (!value) {
@@ -10,12 +10,7 @@ function normalizeSiteUrl(value?: string) {
     : `https://${value}`;
 }
 
-const rawSiteUrl =
-  normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
-  normalizeSiteUrl(process.env.SITE_URL) ??
-  normalizeSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ??
-  normalizeSiteUrl(process.env.VERCEL_URL) ??
-  DEFAULT_SITE_URL;
+const rawSiteUrl = normalizeSiteUrl(DEFAULT_SITE_URL) ?? DEFAULT_SITE_URL;
 
 export const siteUrl = new URL(rawSiteUrl);
 
