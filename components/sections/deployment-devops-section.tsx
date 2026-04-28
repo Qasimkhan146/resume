@@ -43,8 +43,8 @@ export function DeploymentDevOpsSection() {
           description="I do not just build apps. I help prepare them for real-world usage with reliable deployment workflows and practical DevOps support."
         />
 
-        <div className="surface-card rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900 sm:p-6">
-          <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
+        <div className="surface-card shadow-md rounded-2xl p-5 sm:p-6">
+          <p className="text-sm leading-7 text-(--color-muted)">
             My focus is on shipping maintainable products with dependable release processes. I keep the approach pragmatic and aligned with project needs, without overengineering.
           </p>
 
@@ -52,15 +52,15 @@ export function DeploymentDevOpsSection() {
             {deploymentItems.map((item) => (
               <article
                 key={item.title}
-                className="surface-card rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800"
+                className="surface-card shadow-sm rounded-xl p-4 border border-(--color-border)"
               >
-                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                <h3 className="text-sm font-semibold text-(--color-text)">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-blue-600 dark:text-blue-400">
+                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-(--color-accent)">
                   {item.tools}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                <p className="mt-2 text-sm leading-6 text-(--color-muted)">
                   {item.description}
                 </p>
               </article>

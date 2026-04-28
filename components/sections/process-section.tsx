@@ -38,27 +38,27 @@ export function ProcessSection() {
           description="My goal is to deliver scalable and production-ready solutions with clear communication and predictable execution."
         />
 
-        <div className="surface-card rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900 sm:p-6">
-          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+        <div className="surface-card shadow-md rounded-2xl p-5 sm:p-6">
+          <p className="text-sm leading-6 text-(--color-muted)">
             Each phase is designed to reduce risk, maintain quality, and keep your product moving forward with confidence.
           </p>
 
           <div className="relative mt-6">
-            <div className="absolute bottom-0 left-5 top-0 w-px bg-slate-200 dark:bg-slate-700 md:hidden" />
-            <div className="absolute left-0 right-0 top-5 hidden h-px bg-slate-200 dark:bg-slate-700 md:block" />
+            <div className="absolute bottom-0 left-5 top-0 w-px bg-(--color-border) md:hidden" />
+            <div className="absolute left-0 right-0 top-5 hidden h-px bg-(--color-border) md:block" />
 
             <ol className="space-y-5 md:grid md:grid-cols-5 md:gap-4 md:space-y-0">
               {workSteps.map((step, index) => (
-                <li key={step.title} className="relative pl-14 md:pl-0">
-                  <span className="absolute left-0 top-0 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-blue-200 bg-blue-50 text-sm font-semibold text-blue-700 transition-colors duration-200 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-300 md:left-1/2 md:-translate-x-1/2">
+                <li key={step.title} className="relative pl-14 md:pl-0 ">
+                  <span className="absolute left-0 top-0 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--color-border) bg-[color-mix(in_srgb,var(--color-accent)_10%,var(--color-surface))] text-sm font-semibold text-(--color-accent) transition-colors duration-200 md:left-1/2 md:-translate-x-1/2">
                     {index + 1}
                   </span>
 
-                  <article className="surface-card h-full rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800 md:mt-8">
-                    <h3 className="text-sm font-semibold leading-6 text-slate-900 dark:text-slate-100">
+                  <article className="surface-card h-full rounded-2xl p-4 md:mt-8 border border-(--color-border) shadow-sm">
+                    <h3 className="text-sm font-semibold leading-6 text-(--color-text)">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    <p className="mt-2 text-sm leading-6 text-(--color-muted)">
                       {step.description}
                     </p>
                   </article>

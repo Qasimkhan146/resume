@@ -83,7 +83,7 @@ export function ContactForm({
     <form className={className ?? "space-y-4"} noValidate onSubmit={onSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-200">
+          <span className="mb-1.5 block text-sm font-medium text-(--color-text)">
             Name
           </span>
           <input
@@ -96,12 +96,12 @@ export function ContactForm({
               setValues((prev) => ({ ...prev, name: event.target.value }))
             }
             placeholder="Your full name"
-            className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-blue-200 transition focus:border-blue-500 focus:ring-1 invalid:border-blue-400 focus:invalid:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400 dark:invalid:border-gray-500"
+            className="w-full rounded-lg border border-(--color-border) bg-(--color-surface) px-3 py-2.5 text-sm text-(--color-text) outline-none ring-(--color-accent) transition focus:border-(--color-accent) focus:ring-1 invalid:border-(--color-accent) focus:invalid:ring-(--color-accent)"
           />
         </label>
 
         <label className="block">
-          <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-200">
+          <span className="mb-1.5 block text-sm font-medium text-(--color-text)">
             Email
           </span>
           <input
@@ -114,13 +114,13 @@ export function ContactForm({
               setValues((prev) => ({ ...prev, email: event.target.value }))
             }
             placeholder="you@example.com"
-            className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-blue-200 transition focus:border-blue-500 focus:ring-1 invalid:border-blue-400 focus:invalid:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400 dark:invalid:border-gray-500"
+            className="w-full rounded-lg border border-(--color-border) bg-(--color-surface) px-3 py-2.5 text-sm text-(--color-text) outline-none ring-(--color-accent) transition focus:border-(--color-accent) focus:ring-1 invalid:border-(--color-accent) focus:invalid:ring-(--color-accent)"
           />
         </label>
       </div>
 
       <label className="block">
-        <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-200">
+        <span className="mb-1.5 block text-sm font-medium text-(--color-text)">
           Message
         </span>
         <textarea
@@ -133,21 +133,21 @@ export function ContactForm({
             setValues((prev) => ({ ...prev, message: event.target.value }))
           }
           placeholder="Tell me about your project, goals, and expected timeline."
-          className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-blue-200 transition focus:border-blue-500 focus:ring-1 invalid:border-blue-400 focus:invalid:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400 dark:invalid:border-gray-500"
+          className="w-full rounded-lg border border-(--color-border) bg-(--color-surface) px-3 py-2.5 text-sm text-(--color-text) outline-none ring-(--color-accent) transition focus:border-(--color-accent) focus:ring-1 invalid:border-(--color-accent) focus:invalid:ring-(--color-accent)"
         />
       </label>
 
       {helperText ? (
-        <p className="text-xs text-slate-500 dark:text-slate-400">{helperText}</p>
+        <p className="text-xs text-(--color-muted)">{helperText}</p>
       ) : null}
 
       <p
         aria-live="polite"
         className={`text-sm ${state.status === "error"
-          ? "text-rose-600 dark:text-rose-400"
+          ? "text-rose-600"
           : state.status === "success"
-            ? "text-emerald-600 dark:text-emerald-400"
-            : "text-slate-600 dark:text-slate-300"
+            ? "text-emerald-600"
+            : "text-(--color-muted)"
           }`}
       >
         {state.message}
@@ -156,7 +156,7 @@ export function ContactForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-linear-to-r from-blue-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:from-blue-700 hover:to-cyan-700 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-(--color-accent) px-5 py-2.5 text-sm font-semibold text-(--color-surface) transition-all duration-200 hover:-translate-y-0.5 hover:bg-(--color-accent-hover) disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {isSubmitting ? "Sending..." : buttonText}
       </button>

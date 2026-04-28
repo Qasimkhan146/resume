@@ -31,18 +31,18 @@ export default function ContactPage() {
         />
 
         <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-          <div className="surface-card rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+          <div className="surface-card border border-(--color-border) shadow-sm rounded-2xl p-6">
             <ContactForm
               buttonText="Send Inquiry"
               helperText="Submissions from this form are sent directly to my provider email."
             />
           </div>
 
-          <aside className="surface-card rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
-            <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">Direct Contact</h2>
-            <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">Email: {siteMeta.email}</p>
-            <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Location: {siteMeta.location}</p>
-            <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          <aside className="surface-card border border-(--color-border) shadow-sm rounded-2xl p-6">
+            <h2 className="text-base font-semibold text-(--color-text)">Direct Contact</h2>
+            <p className="mt-3 text-sm text-(--color-muted)">Email: {siteMeta.email}</p>
+            <p className="mt-1 text-sm text-(--color-muted)">Location: {siteMeta.location}</p>
+            <p className="mt-4 text-sm leading-6 text-(--color-muted)">
               Available for freelance projects, startup collaborations, and full-time roles.
             </p>
           </aside>

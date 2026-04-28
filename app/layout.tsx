@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Footer, Navbar } from "@/components/sections";
 import { defaultSeo, siteUrl } from "@/lib/seo";
 import "./globals.css";
+import ScrollToTop from "@/components/sections/goto-top";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -77,8 +78,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    { media: "(prefers-color-scheme: light)", color: "#F0F6FF" },
+    { media: "(prefers-color-scheme: dark)", color: "#030D1A" },
   ],
 };
 
@@ -93,14 +94,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} ${inter.className} min-h-screen bg-slate-50 text-slate-900 antialiased transition-colors dark:bg-slate-950 dark:text-slate-100`}
+        className={`${inter.variable} ${inter.className} min-h-screen antialiased transition-colors bg-(--color-bg) text-(--color-text)`}
       >
         <div className="flex min-h-screen flex-col overflow-x-hidden">
           <Navbar />
           <main className="flex-1">{children}</main>
+          <ScrollToTop />
           <Footer />
         </div>
       </body>
     </html>
   );
 }
+ 

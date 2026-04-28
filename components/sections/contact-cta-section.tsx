@@ -38,18 +38,18 @@ export function ContactCtaSection() {
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="surface-card rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6">
+          <div className="surface-card rounded-2xl p-5 shadow-sm sm:p-6">
             <ContactForm
               buttonText="Send Project Inquiry"
               helperText="Your message will be delivered directly to my provider email inbox."
             />
           </div>
 
-          <aside className="surface-card rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+          <aside className="surface-card rounded-2xl p-5 shadow-sm sm:p-6">
+            <h3 className="text-base font-semibold text-(--color-text)">
               Contact Links
             </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <p className="mt-2 text-sm leading-6 text-(--color-muted)">
               You can also reach out directly through these channels.
             </p>
 
@@ -61,21 +61,21 @@ export function ContactCtaSection() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                      className="surface-card block rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-blue-300 hover:bg-blue-50/50 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-blue-700 dark:hover:bg-slate-800"
+                      className="surface-card block rounded-xl border border-(--color-border) bg-(--color-surface) px-4 py-3 transition hover:border-(--color-accent) hover:bg-[color-mix(in_srgb,var(--color-accent)_10%,var(--color-surface))]"
                     >
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-(--color-muted)">
                         {link.label}
                       </p>
-                      <p className="mt-1 break-all text-sm font-medium text-slate-800 dark:text-slate-100">
+                      <p className="mt-1 break-all text-sm font-medium text-(--color-text)">
                         {link.value}
                       </p>
                     </a>
                   ) : (
-                    <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50/70 px-4 py-3 dark:border-slate-700 dark:bg-slate-800/70">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    <div className="rounded-xl border border-dashed border-(--color-border) bg-(--color-surface)/90 px-4 py-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-(--color-muted)">
                         {link.label}
                       </p>
-                      <p className="mt-1 break-all text-sm font-medium text-slate-800 dark:text-slate-100">
+                      <p className="mt-1 break-all text-sm font-medium text-(--color-text)">
                         {link.value}
                       </p>
                     </div>

@@ -20,24 +20,25 @@ export function SectionHeading({
   return (
     <header className={cn("space-y-3", align === "center" && "text-center")}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-muted)">
           {eyebrow}
         </p>
       ) : null}
-      <HeadingTag className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-100">
+      <HeadingTag className="text-2xl font-semibold tracking-tight text-(--color-text) sm:text-3xl">
         {title}
       </HeadingTag>
       <span
         aria-hidden
         className={cn(
-          "block h-px w-16 bg-gradient-to-r from-blue-500/70 to-cyan-500/40",
+          "block h-px w-16",
           align === "center" && "mx-auto",
         )}
+        style={{ background: "linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)" }}
       />
       {description ? (
         <p
           className={cn(
-            "max-w-2xl text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300",
+            "max-w-2xl text-sm leading-6 text-(--color-muted) sm:text-base",
             align === "center" && "mx-auto",
           )}
         >
