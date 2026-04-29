@@ -15,15 +15,15 @@ const rawSiteUrl = normalizeSiteUrl(DEFAULT_SITE_URL) ?? DEFAULT_SITE_URL;
 export const siteUrl = new URL(rawSiteUrl);
 
 export const defaultSeo = {
-  title: "Full-Stack Developer Portfolio | Next.js Node.js MERN PERN",
+  title: "Qasim Sharif - Full-Stack Developer",
   description:
     "Full-Stack Developer building marketplaces, SaaS platforms, admin dashboards, and production-ready web applications with Next.js, Node.js, PostgreSQL, and MongoDB.",
   keywords: [
     "Full-Stack Developer",
     "Next.js developer",
     "Node.js developer",
-    "MERN stack",
-    "PERN stack",
+    "MERN stack developer",
+    "PERN stack developer",
     "React.js",
     "Tailwind CSS",
     "PostgreSQL",
